@@ -1,0 +1,145 @@
+<mat-card>
+<div class="segment-div">
+  <h3>New</h3>
+  </div>
+  <div class="segment-div">
+    <table>
+      <thead>
+        <tr>
+          <td align="right">
+            <label id="customer-label">Customer</label>
+          </td>
+         <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-select id="customer-select">
+                <mat-option value="abc">ABC Company Pvt Ltd</mat-option>
+                <mat-option value="xyz">XYZ Company Pvt Ltd</mat-option>
+            </mat-select>   
+        </mat-form-field>
+         </td>
+         <td align="right">
+           <label id="quotation_date">Validity</label>
+         </td>
+         <td>
+          <input  #dateChange id="date-picker-input" matInput [matDatepicker]="picker" (dateChange)="triggerChange($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+          
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+         </td>
+         <td>
+          <button routerLink="/listview" (click)="quotationLoad(dateChange)">Load Quotation</button>  </td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="segment-div">
+  <mat-tab-group class="mat-class">
+  <mat-tab class="mat-class" label="Order Lines">
+  <table class="product_head">
+    <thead class="product_head">
+      <th>Product</th>
+      <th>Description</th>
+      <th>Ordered Qty</th>
+      <th>Unit of Measure</th>
+      <th>Unit Price</th>
+      <th>Taxes</th>
+      <th>Subtotal</th>
+      <th>Total</th>
+    </thead>
+    <tbody>
+      <div [hidden]="submitted" style="width: 150px;">
+      <form (ngSubmit)="onSubmit()">
+        <td>
+          <div class="form-group">
+            <select class="form-control" id="productName" [(ngModel)]="product.productName" name="productName">
+              <option value="0">Television</option>
+              <option value="1">Air Conditioner</option>
+              <option value="2">Laptop</option>
+              <option value="2">Microphone</option>
+            </select>  
+          </div>
+        </td>
+
+        <td>
+          <div class="form-group">
+            <input type="text" class="form-control" id="productDescription" required [(ngModel)]="product.productDescription" name="productDescription">
+            </div>
+        </td>
+        <td></td>
+       <td>
+         <div class="form-group">
+           <input type="number" class="form-control" id="orderedQty" [(ngModel)]="product.orderedQty" name="orderedQty">
+         </div>
+       </td>
+       <td>
+         <div class="form-group">
+          <select class="form-control" id="unitOfMeasure" [(ngModel)]="product.unitOfMeasure" name="unitOfMeasure">
+            <option value="a1">Voltz</option>
+            <option value="a2">Tonnes/option>
+            <option value="a3">Processor</option>
+            <option value="a4">Hertz<option>
+          </select>  
+         </div>
+       </td>
+       <td>
+         <div class="form-group">
+           <input type="number" class="form-control" id="unitPrice" [(ngModel)]="product.unitPrice" name="unitPrice">
+         </div>
+       </td>
+       <td>
+        <div class="form-group">
+          <input type="number" class="form-control" id="taxes" [(ngModel)]="product.taxes" name="taxes">
+        </div>
+      </td>
+       <td>
+         <div class="form-group">
+           <input type="number" class="form-control" id="subTotal" [(ngModel)]="product.subTotal" name="subTotal">
+         </div>
+       </td>
+       <td>
+         <div class="form-group">
+           <input type="number" class="form-control" id="total" [(ngModel)]="product.total" name="total">
+         </div>
+       </td>
+       <button type="submit" class="btn btn-success">Add a Product</button>
+</form>
+</div>
+    </tbody>
+  </table>
+ 
+  </mat-tab>
+  <mat-tab>
+
+  </mat-tab>
+  <mat-tab class="mat-class" label="Other Informtaion" disabled>
+  </mat-tab>
+  </mat-tab-group>
+  </div>
+</mat-card>
+  
+<mat-card>
+  <div id="total" style="display: flex; justify-content: flex-end">
+    <mat-list>
+      <mat-divider></mat-divider>
+   <div>
+    <label>Untaxed Amount</label>
+    <label id="Untaxed_label">   0.00</label>
+   </div> 
+   <div>
+    <label>Taxes</label>
+    <label id="taxes_label">    0.00</label>
+   </div> 
+      <mat-divider></mat-divider>
+      <label>Total</label>
+    <label id="total_label">    0.00</label>
+    </mat-list>
+    </div>
+  
+</mat-card>
+
+<div [hidden]="!recordCreated">
+  <h4>Product Record Added</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+  
+</div>

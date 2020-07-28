@@ -1,0 +1,20 @@
+[
+    {
+        "productId" : "AB001",
+        "productName" :"Television",
+        "productDescription" : "Smart Tv",
+        "orderedCity" : "Coimbatore",
+        "unitOfMeasure" : 2,
+        "unitOfPrice": "70,000",
+        "subTotal" : "1,40,000"
+    },
+    {
+        "productId" : "AB002",
+        "productName" :"Washing Machine",
+        "productDescription" : "Automatic",
+        "orderedCity" : "Coimbatore",
+        "unitOfMeasure" : 2,
+        "unitOfPrice": "30,000",
+        "subTotal" : "60,000"
+      }
+  ]

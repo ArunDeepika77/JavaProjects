@@ -1,0 +1,20 @@
+[
+    {
+    "qNo" : 2001,
+    "qDate": "15/06/2020",
+    "customer": "ABC Pvt. Ltd",
+    "total": 50000
+    },
+    {
+      "qNo" : 2002,
+      "qDate": "15/06/2020",
+      "customer": "DLF Pvt. Ltd",
+      "total": 50000
+      },
+      {
+        "qNo" : 5001,
+        "qDate": "15/06/2020",
+        "customer": "BCD Pvt. Ltd",
+        "total": 50000
+        }
+  ]

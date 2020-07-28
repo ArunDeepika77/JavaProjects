@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+  }
+  
+  a{
+text-transform: uppercase;
+text-decoration: none;
+background: #9db192;
+padding: 4px;
+border-radius: 7px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+.order-period-div{
+padding: 10px;
+};

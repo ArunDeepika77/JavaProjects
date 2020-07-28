@@ -1,0 +1,74 @@
+<style>
+
+    table, th, td {
+        padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      }
+      table {
+        border-collapse: collapse;
+      width: 100%;
+      }
+    
+    
+      th {
+      padding: 15px;
+      
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    td{
+        background-color: #ffffff;
+        box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    
+    }
+    
+    
+    </style>
+      <head></head>
+    
+    <body>
+      <mat-toolbar>
+        <div class="order-period-div">
+          <label class="order-period-div">Quotation Order For</label>
+          <select class="order-period-div" (change)="onChange($event.target.value)">
+            <option value="0">Today</option>
+            <option value="-1">Yesterday</option>
+            <option value="1">This Week</option>
+            <option value="2">This Month</option>
+          </select>
+          
+        </div> 
+        <nav>
+          <a routerLink="/formview"  routerLinkActive="active">Back to Form View</a>      
+        </nav>
+      </mat-toolbar>
+    <mat-card class="mat-tab-class">
+    <div> 
+             <table>
+                   <thead> 
+                          <tr>
+                            <th>Quotation Number</th>
+                            <th>Quotation Date</th> 
+                            <th>Customer</th>
+                            <th>Total</th>
+                                   </tr>
+                      </thead>
+       <tbody>
+    
+              <tr *ngFor = "let quotation of quotations">
+                      <td>{{quotation.quotationNo}}</td>
+                      <td>{{quotation.quotationDate}}</td>
+                      <td>{{quotation.customer}}</td>
+                      <td>{{quotation.total}}</td>
+             </tr>
+       </tbody>
+    
+    </table>
+    
+    
+    </div>
+    
+    </mat-card>
+    </body>
